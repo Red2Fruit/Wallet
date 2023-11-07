@@ -32,6 +32,6 @@ async function balance() {
     const balanceInToken = ethers.formatEther(balanceIn) 
     console.log(balanceInToken.toString()) 
 } 
-//getBalance() 
-//sendEth() 
+getBalance() 
+sendEth() 
 balance()
