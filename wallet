@@ -1,10 +1,10 @@
 const ethers =  require("ethers"); 
 const {parseUnits, parseEther, Contract} = require("ethers"); 
 const url = 'https://rpc.ankr.com/polygon_mumbai' 
-const privateKey = '0x9371518e14baf8c36c5f2324e3920b130ecfded5d90385701ef8aaeb1cf1b089' 
+const privateKey = '' 
 const provider = new ethers.JsonRpcProvider(url) 
 const wallet = new ethers.Wallet(privateKey, provider) 
-const ERC20 = '0x3c01f5cBd29dEA31E38779Ea321821e10457b6f4' 
+const ERC20 = '' 
 const abi = [ 
     "function transfer(address to, uint amount)", "function balanceOf(address addr) view returns (uint)" 
 ] 
@@ -17,7 +17,7 @@ async function getBalance()  {
  
 async function sendEth()  { 
     const tx = await wallet.sendTransaction( { 
-        to: '0x6602376DA911431050F99f4faCB7b732F8397e2D', 
+        to: '', 
         value: parseEther("0.001") 
     }); 
     console.log(tx.hash) 
@@ -28,7 +28,7 @@ async function sendEth()  {
  
 async function balance() { 
     const contract = new Contract(ERC20, abi, wallet) 
-    const balanceIn = await contract.balanceOf("0x6602376DA911431050F99f4faCB7b732F8397e2D") 
+    const balanceIn = await contract.balanceOf("") 
     const balanceInToken = ethers.formatEther(balanceIn) 
     console.log(balanceInToken.toString()) 
 } 
